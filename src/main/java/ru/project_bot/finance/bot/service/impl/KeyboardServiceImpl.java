@@ -45,7 +45,6 @@ public class KeyboardServiceImpl implements KeyboardService {
             InlineKeyboardButton button = new InlineKeyboardButton();
             button.setText(suggestion.getSuggestion());
 
-            // ✅ ИСПРАВЛЕНО: Используем методы CallbackData вместо прямой конкатенации
             if (CallbackData.CURRENCY_PREFIX.equals(suggestion.getType())) {
                 button.setCallbackData(CallbackData.createCurrencyCallback(suggestion.getSuggestion()));
             } else if (CallbackData.STOCK_PREFIX.equals(suggestion.getType())) {
@@ -60,7 +59,6 @@ public class KeyboardServiceImpl implements KeyboardService {
             rowsInline.add(rowInline);
         }
 
-        // ✅ ИСПРАВЛЕНО: Используем CallbackData.createCloseCallback() вместо "close"
         List<InlineKeyboardButton> closeRow = new ArrayList<>();
         InlineKeyboardButton closeButton = new InlineKeyboardButton();
         closeButton.setText("❌ Закрыть");
