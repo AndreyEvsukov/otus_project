@@ -12,9 +12,4 @@ public class ApplicationConfig {
     public ObjectMapper mapper() {
         return new ObjectMapper();
     }
-
-    @Bean
-    public MoexApiClient moexDataApi() {
-        return new MoexApiClientImpl();
-    }
 }
